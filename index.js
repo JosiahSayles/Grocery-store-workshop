@@ -94,7 +94,10 @@ function countItems(inventory) {
  * @returns {number} the cost of all given items
  */
 function getTotalPrice(items) {
-  const total = inventory.reduce((amount, items) => (amount += items.price), 0);
+  const total = inventory.reduce(
+    (amount, items) => amount + items.quantity * items.price,
+    0
+  );
   return total;
 }
 
